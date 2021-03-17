@@ -15,6 +15,9 @@ spec:
     - name: {{ template "dask.fullname" . }}-jupyter
       port: {{ .Values.jupyter.servicePort }}
       targetPort: 8888
+      {{- with .Values.jupyter.serviceNodePort }}
+      nodePort: {{ . }}
+      {{- end }}
   selector:
     app: {{ template "dask.name" . }}
     release: {{ .Release.Name | quote }}

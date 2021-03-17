@@ -114,6 +114,7 @@ jupyter:
   # serviceType: "NodePort"
   # serviceType: "LoadBalancer"
   servicePort: 80  # Jupyter service internal port.
+  serviceNodePort:
   # This hash corresponds to the password 'dask'
   password: 'sha1:aae8550c0a44:9507d45e087d5ee481a5ce9f4f16f37a0867318c' # Password hash. Default hash corresponds to the password `dask`.
   env:  # Environment variables. See `values.yaml` for example values.
