@@ -150,6 +150,7 @@ jupyter:
   nodeSelector: {}  # Node Selector.
   securityContext: {}  # Security Context.
   serviceAccountName: "dask-jupyter"  # Service account for use with RBAC
+  annotations: {}
   ingress:
     enabled: false  # Enable ingress.
     tls: false  # Ingress should use TLS.

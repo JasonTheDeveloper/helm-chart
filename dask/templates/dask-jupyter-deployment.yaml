@@ -25,6 +25,10 @@ spec:
         app: {{ template "dask.name" . }}
         release: {{ .Release.Name | quote }}
         component: jupyter
+      {{- if .Values.jupyter.annotations }}
+      annotations:
+        {{- toYaml .Values.jupyter.annotations | nindent 8 }}
+      {{- end }}
     spec:
       imagePullSecrets:
         {{- toYaml .Values.jupyter.image.pullSecrets | nindent 8 }}
